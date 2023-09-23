@@ -1,0 +1,71 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Feb 16, 2023 at 10:07 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.1.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+--
+-- Database: `cake-shop`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `categories`
+--
+
+CREATE TABLE `categories` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `category_name` varchar(255) NOT NULL,
+  `category_description` varchar(255) NOT NULL,
+  `image_path` varchar(255) NOT NULL,
+  `status` enum('1','0') NOT NULL DEFAULT '1',
+  `created_by` int(11) NOT NULL DEFAULT 0,
+  `updated_by` int(11) NOT NULL DEFAULT 0,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `categories` (`id`, `category_name`, `category_description`,`image_path`
+ `status`, `created_by`, `updated_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
+(2, 'Chocolate', 'For choco addicts', '1', 0, 0, NULL, '2023-02-16 01:19:28', '2023-02-16 01:19:28'),
+(3, 'Fruits', 'A Test of Tropics', '1', 0, 0, NULL, '2023-02-16 01:19:45', '2023-02-16 01:19:45'),
+(4, 'Red Velvet', 'For Exotic Lover', '1', 0, 0, NULL, '2023-02-16 01:20:34', '2023-02-16 01:20:34'),
+(5, 'Mango', 'For Mango Lovers', '1', 0, 0, NULL, '2023-02-16 01:20:54', '2023-02-16 01:20:54'),
+(6, 'Blackforest', 'The All Time Favourite', '1', 0, 0, NULL, '2023-02-16 01:21:14', '2023-02-16 01:21:14'),
+(7, 'Pineapple Cake', 'Evergreen One', '1', 0, 0, NULL, '2023-02-16 01:21:57', '2023-02-16 01:21:57'),
+(8, 'Butterscotch', 'For Candy Fans', '1', 0, 0, NULL, '2023-02-16 01:22:15', '2023-02-16 01:22:15'),
+(9, 'Kit Kat', 'Crunchiness Overloaded', '1', 0, 0, NULL, '2023-02-16 01:22:30', '2023-02-16 01:22:30');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `categories`
+--
+ALTER TABLE `categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `categories`
+--
+ALTER TABLE `categories`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+COMMIT;
